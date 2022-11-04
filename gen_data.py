@@ -1,4 +1,3 @@
-# %%
 import pandas as pd
 from typing import Dict, List
 import numpy as np
@@ -182,7 +181,7 @@ def gen_dataset(N: int,
     df = pd.DataFrame(data_rows)
     return df
 
-# %%
+
 
 
 named_tuple = time.localtime()  # get struct_time
@@ -208,4 +207,3 @@ print(tweaked_df['class'].value_counts())
 print('==================================')
 print('Output Success.')
 
-# %%

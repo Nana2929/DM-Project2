@@ -1,4 +1,3 @@
-# %%
 from sklearn import tree
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
@@ -128,7 +127,6 @@ def bayes_classify(tratio):
     print(f'Score: {bayes_score:.3f}')
     save_cfm(bayes_clf, tratio, test_X=test_X, test_y=test_y)
     feature_analysis(bayes_clf, test_X, test_y, feature_names)
-# %%
 
 
 def feature_analysis(model, X, y, feature_names):
@@ -141,4 +139,3 @@ def feature_analysis(model, X, y, feature_names):
             print(f"{feature_names[i]:<8}\t"
                   f"{r.importances_mean[i]:.3f}"
                   f" +/- {r.importances_std[i]:.3f}")
-# %%
