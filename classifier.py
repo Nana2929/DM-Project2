@@ -1,3 +1,4 @@
+# %%
 from sklearn import tree
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
@@ -23,8 +24,8 @@ STYLE_MAP: Final[Dict] = {0: '搞笑', 1: '戀愛',
                           2: '致鬱', 3: '懸疑', 4: '奇幻', 5: '戰鬥',  6: '運動'}
 CLASS_MAP: Final[Dict] = {0: 'bland', 1: 'refreshing', 2: 'masterpiece'}
 colors = ('lightcyan1', 'lightblue1', 'lightskyblue', 'white')
-MIN_SAMEPLES_LEAF = 50
-MAX_DEPTH = 5
+MIN_SAMEPLES_LEAF = 30
+MAX_DEPTH = 7
 
 # https://stackoverflow.com/questions/43214350/color-of-the-node-of-tree-with-graphviz-using-class-names
 # black box issue: https://stackoverflow.com/questions/71867657/an-empty-block-always-appears-on-my-decision-tree-created-by-python
@@ -139,3 +140,5 @@ def feature_analysis(model, X, y, feature_names):
             print(f"{feature_names[i]:<8}\t"
                   f"{r.importances_mean[i]:.3f}"
                   f" +/- {r.importances_std[i]:.3f}")
+
+# %%

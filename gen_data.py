@@ -100,16 +100,15 @@ def is_masterpiece(d: Dict[str, Union[int, float]]):
     IN_SEIYUU_RANK = True and STUDIO_STAFF_NUM >= 120
     且滿足至少以下其中一個條件
     (1)
-    AVG_RATING > 3.8
+    AVG_RATING > 4.0
     CHARACTER_NUM > 35
-    SCREENPLAY_WRITER_NUM < 3
+    SCREENPLAY_WRITER_NUM > 3
     SEASONS > 2
 
     (2)
     THEME_SINGER = 'Lisa' or 'Sawano Hiroyuki'
     STYLE = '運動' or '戰鬥'
-    AVG_RATING > 3.5
-    CHARACTER_NUM > 40
+    AVG_RATING > 3.8 
     """
 
     if d[IN_SEIYUU_RANK] == 0 or d[STUDIO_STAFF_NUM] < 120:
