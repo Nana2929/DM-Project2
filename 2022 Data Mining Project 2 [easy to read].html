@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        2022 Data Mining Project 2 - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{background:#fff;color:#333;display:block;overflow-x:auto;padding:.5em}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{background-color:#eaffea;color:#55a532}.hljs-deletion{background-color:#ffecec;color:#bd2c00}.hljs-link{text-decoration:underline}.markdown-body{word-wrap:break-word;font-size:16px;line-height:1.5}.markdown-body:after,.markdown-body:before{content:"";display:table}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-bottom:16px;margin-top:0}.markdown-body hr{background-color:#e7e7e7;border:0;height:.25em;margin:24px 0;padding:0}.markdown-body blockquote{border-left:.25em solid #ddd;color:#777;font-size:16px;padding:0 1em}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{background-color:#fcfcfc;border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb;color:#555;display:inline-block;font-size:11px;line-height:10px;padding:3px 5px;vertical-align:middle}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{font-weight:600;line-height:1.25;margin-bottom:16px;margin-top:24px}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{border-bottom:1px solid #eee;padding-bottom:.3em}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{color:#777;font-size:.85em}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{list-style-type:none;padding:0}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-bottom:0;margin-top:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{font-size:1em;font-style:italic;font-weight:700;margin-top:16px;padding:0}.markdown-body dl dd{margin-bottom:16px;padding:0 16px}.markdown-body table{display:block;overflow:auto;width:100%;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{border:1px solid #ddd;padding:6px 13px}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{background-color:#fff;box-sizing:initial;max-width:100%}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{background-color:initial;max-width:none;vertical-align:text-top}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{border:1px solid #ddd;display:block;float:left;margin:13px 0 0;overflow:hidden;padding:7px;width:auto}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{clear:both;color:#333;display:block;padding:5px 0 0}.markdown-body span.align-center{clear:both;display:block;overflow:hidden}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{clear:both;display:block;overflow:hidden}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{background-color:#0000000a;border-radius:3px;font-size:85%;margin:0;padding:.2em 0}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{content:"\00a0";letter-spacing:-.2em}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{background:#0000;border:0;font-size:100%;margin:0;padding:0;white-space:pre;word-break:normal}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{background-color:#f7f7f7;border-radius:3px;font-size:85%;line-height:1.45;overflow:auto;padding:16px}.markdown-body pre code,.markdown-body pre tt{word-wrap:normal;background-color:initial;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{background:#fff;border:0;padding:10px 8px 9px;text-align:right}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{background:#f8f8f8;border-top:0;font-weight:700}.news .alert .markdown-body blockquote{border:0;padding:0 0 0 40px}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{cursor:default!important;float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle}.markdown-body{max-width:758px;overflow:visible!important;padding-bottom:40px;padding-top:40px;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{border-right:3px solid #6ce26c!important;box-sizing:initial;color:#afafaf!important;cursor:default;display:inline-block;min-width:20px;padding:0 8px 0 0;position:relative;text-align:right;z-index:4}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-bottom:none;border-left:none;border-top:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-collapse:inherit!important;border-spacing:0}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{margin-bottom:unset;overflow:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p:last-child{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{background-color:inherit;border-radius:0;overflow:visible;text-align:center;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{height:100%;max-width:100%}.markdown-body pre>code.wrap{word-wrap:break-word;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap}.markdown-body .alert>p:last-child,.markdown-body .alert>ul:last-child{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{background-color:#000;background-position:50%;background-repeat:no-repeat;background-size:contain;cursor:pointer;display:table;overflow:hidden;text-align:center}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{object-fit:contain;width:100%;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{height:100%;left:0;position:absolute;top:0;width:100%}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{color:#fff;height:auto;left:50%;opacity:.3;position:absolute;top:50%;transform:translate(-50%,-50%);transition:opacity .2s;width:auto;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.figma{display:table;padding-bottom:56.25%;position:relative;width:100%}.figma iframe{border:1px solid #eee;bottom:0;height:100%;left:0;position:absolute;right:0;top:0;width:100%}.markmap-container{height:300px}.markmap-container>svg{height:100%;width:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{color:#777;margin:25px auto -25px;max-width:760px;position:relative;z-index:2}.toc .invisable-node{list-style-type:none}.ui-toc{bottom:20px;position:fixed;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{border-bottom-left-radius:0;border-top-left-radius:0;height:40px;padding:10px 4px}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{color:#fff;opacity:1;transition:opacity .2s}.ui-toc-label:focus{background-color:#ccc;color:#000;opacity:.3}.ui-toc-label:hover{background-color:#ccc;opacity:1;transition:opacity .2s}.ui-toc-dropdown{margin-bottom:20px;margin-top:20px;max-height:70vh;max-width:45vw;overflow:auto;padding-left:10px;padding-right:10px;text-align:inherit;width:25vw}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{letter-spacing:.0029em;padding-right:0}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{color:#767676;display:block;font-size:13px;font-weight:500;padding:4px 20px}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{background-color:initial;border-left:1px solid #000;color:#000;padding-left:19px;text-decoration:none}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{border-left:none;border-right:1px solid #000;padding-right:19px}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{background-color:initial;border-left:2px solid #000;color:#000;font-weight:700;padding-left:18px}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{border-left:none;border-right:2px solid #000;padding-right:18px}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:30px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{font-size:12px;font-weight:400;padding-bottom:1px;padding-left:40px;padding-top:1px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{font-weight:500;padding-left:28px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{font-weight:500;padding-left:38px}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{max-height:70vh;max-width:15vw;overflow:auto;position:fixed;top:0}.back-to-top,.expand-toggle,.go-to-bottom{color:#999;display:block;font-size:12px;font-weight:500;margin-left:10px;margin-top:10px;padding:4px 10px}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{background-position:50%;background-repeat:no-repeat;background-size:cover;border-radius:50%;display:block;height:20px;margin-bottom:2px;margin-right:5px;margin-top:2px;width:20px}.ui-user-icon.small{display:inline-block;height:18px;margin:0 0 .2em;vertical-align:middle;width:18px}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;padding-left:22px;text-decoration:none}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}.inline-spoiler-section{cursor:pointer}.inline-spoiler-section .spoiler-text{background-color:#333;border-radius:2px}.inline-spoiler-section .spoiler-text>*{opacity:0}.inline-spoiler-section .spoiler-img{filter:blur(10px)}.inline-spoiler-section.raw{background-color:#333;border-radius:2px}.inline-spoiler-section.raw>*{opacity:0}.inline-spoiler-section.unveil{cursor:auto}.inline-spoiler-section.unveil .spoiler-text{background-color:#3333331a}.inline-spoiler-section.unveil .spoiler-text>*{opacity:1}.inline-spoiler-section.unveil .spoiler-img{filter:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{color:#222;position:relative;z-index:1}.markdown-body.slides:before{background-color:currentColor;bottom:0;box-shadow:0 0 0 50vw;content:"";display:block;left:0;position:absolute;right:0;top:0;z-index:-1}.markdown-body.slides section[data-markdown]{background-color:#fff;margin-bottom:1.5em;position:relative;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{left:1em;max-height:100%;overflow:hidden;position:absolute;right:1em;top:50%;transform:translateY(-50%)}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{border:3px solid #777;content:"";height:1.5em;position:absolute;right:1em;top:-1.5em}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}svg{text-shadow:none}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true" style=""><h1 id="2022-Data-Mining-Project-2" data-id="2022-Data-Mining-Project-2" style=""><a class="anchor hidden-xs" href="#2022-Data-Mining-Project-2" title="2022-Data-Mining-Project-2"><span class="octicon octicon-link"></span></a><span>2022 Data Mining Project 2</span></h1><p><span>P76114511 資訊所一 楊晴雯</span><br>
+<span>Topic: Classification Analysis</span></p><hr><h2 id="I-資料設計（Data-Design）" data-id="I-資料設計（Data-Design）" style=""><a class="anchor hidden-xs" href="#I-資料設計（Data-Design）" title="I-資料設計（Data-Design）"><span class="octicon octicon-link"></span></a><span>I. 資料設計（Data Design）</span></h2><p><span>這是一個動漫資料集之設計，每一筆資料代表一部動漫作品。給定一組離散（類別或數值）或連續數值的屬性資料，該任務為一三分類任務，三個分類為：鉅作（masterpiece）、小品（refreshing）、平淡（bland），欲判斷「該部動漫為三分類的哪一類」。</span></p><h4 id="I-特徵屬性（FeaturesAttributes）" data-id="I-特徵屬性（FeaturesAttributes）" style=""><a class="anchor hidden-xs" href="#I-特徵屬性（FeaturesAttributes）" title="I-特徵屬性（FeaturesAttributes）"><span class="octicon octicon-link"></span></a><span>(I) 特徵/屬性（Features/Attributes）</span></h4><p><span>以如下11個屬性輸入作為判斷。</span></p><ol>
+<li><span>屬性簡介</span></li>
+</ol><h4 id="Discrete-numerical-離散數值型" data-id="Discrete-numerical-離散數值型" style=""><a class="anchor hidden-xs" href="#Discrete-numerical-離散數值型" title="Discrete-numerical-離散數值型"><span class="octicon octicon-link"></span></a><span>Discrete, numerical 離散數值型</span></h4><p><code>STUDIO_STAFF_NUM</code><span>：動畫工作室（Anime Studio）員工數。可能人數為50-300人（整數）。</span><br>
+<code>SCREENPLAY_WRITER_NUM</code><span>：劇作家人數。可能人數為1-6人（整數）。</span><br>
+<code>SEASONS</code><span>：季數。可能範圍為1-5季（整數）。</span></p><h4 id="Discrete-numerical-離散數值型：Boolean-布林變數" data-id="Discrete-numerical-離散數值型：Boolean-布林變數" style=""><a class="anchor hidden-xs" href="#Discrete-numerical-離散數值型：Boolean-布林變數" title="Discrete-numerical-離散數值型：Boolean-布林變數"><span class="octicon octicon-link"></span></a><span>Discrete, numerical 離散數值型：Boolean 布林變數</span></h4><p><code>IS_AIRING</code><span>：是否仍在連載播出。0/1變數。</span><br>
+<code>IN_SEIYUU_RANK</code><span>：主要角色聲優是否有十年內日本聲優大賞。0/1變數。</span></p><h4 id="Discrete-categorical-離散類別型" data-id="Discrete-categorical-離散類別型" style=""><a class="anchor hidden-xs" href="#Discrete-categorical-離散類別型" title="Discrete-categorical-離散類別型"><span class="octicon octicon-link"></span></a><span>Discrete, categorical 離散類別型</span></h4><p><code>AUTHOR</code><span>：漫畫原作作作者。10位作者（無名字，以數字代替）。</span><br>
+<code>THEME_SINGER</code><span>：主題曲歌手。7位：</span><code>'Lisa', 'Sawano Hiroyuki', 'Hoshino Gen', 'Kenshi Yonezu', 'Mukai Taichi', 'Eve', 'Chico with HoneyWorks'</code><span>。</span><br>
+<code>STYLE</code><span>：風格分類。7種：</span><code>'運動', '戰鬥', '致鬱', '奇幻', '搞笑', '懸疑', '戀愛'</code><span>。</span></p><h4 id="Continuous-連續型" data-id="Continuous-連續型" style=""><a class="anchor hidden-xs" href="#Continuous-連續型" title="Continuous-連續型"><span class="octicon octicon-link"></span></a><span>Continuous 連續型</span></h4><p><code>AVG_RATING</code><span>：平均得分（0-5星）。模擬某個論壇（eg.巴哈姆特）上的評分制度。</span><br>
+<code>AVG_EP_LENGTH</code><span>：每集平均時長（分）。</span><br>
+<code>CHARACTER_NUM</code><span>：角色群人數。</span></p><ol start="2">
+<li><span>資料產生設定</span><br>
+<code>STUDIO_STAFF_NUM</code><span>：50-300人（整數）。抽樣分佈為 uniform distribution。</span><br>
+<code>SCREENPLAY_WRITER_NUM</code><span>：1-6人（整數）。抽樣分佈為 uniform distribution。</span><br>
+<code>SEASONS</code><span>：1-5季（整數）。抽樣分佈為 uniform distribution。</span><br>
+<code>IS_AIRING</code><span>：0/1變數，抽樣分佈為 uniform distribution，即機率各佔一半。</span><br>
+<code>IN_SEIYUU_RANK</code><span>：同上。</span><br>
+<code>AUTHOR</code><span>：抽樣分佈為 uniform distribution。</span><br>
+<code>THEME_SINGER</code><span>：抽樣機率為事先設定的機率值</span><code>[0.3, 0.3, 0.1, 0.1, 0.1, 0.05, 0.05]</code><span>。其意義為 Lisa 和 Sawano Hiroyuki 被抽選的機率各為0.3，Hoshino Gen 等人的機率為0.1，Eve 和 Chico With Honeyworks 的機率則為0.05。</span><br>
+<code>STYLE</code><span>：抽選機率為</span><code>[0.3, 0.3, 0.1, 0.1, 0.1, 0.05, 0.05]</code><span>。同上類推。</span><br>
+<code>AVG_RATING</code><span>：抽樣自 </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-62-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi class=&quot;MJX-tex-caligraphic&quot; mathvariant=&quot;script&quot;>N</mi></mrow><mo stretchy=&quot;false&quot;>(</mo><mn>3.5</mn><mo>,</mo><msup><mn>0.5</mn><mn>2</mn></msup><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-499" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-500" class="mjx-mrow"><span id="MJXc-Node-501" class="mjx-texatom"><span id="MJXc-Node-502" class="mjx-mrow"><span id="MJXc-Node-503" class="mjx-mi"><span class="mjx-char MJXc-TeX-cal-R" style="padding-top: 0.528em; padding-bottom: 0.37em; padding-right: 0.159em;">N</span></span></span></span><span id="MJXc-Node-504" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.475em; padding-bottom: 0.58em;">(</span></span><span id="MJXc-Node-505" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.37em;">3.5</span></span><span id="MJXc-Node-506" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.155em; padding-bottom: 0.528em;">,</span></span><span id="MJXc-Node-507" class="mjx-msubsup MJXc-space1"><span class="mjx-base"><span id="MJXc-Node-508" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.37em;">0.5</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-509" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.318em;">2</span></span></span></span><span id="MJXc-Node-510" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.475em; padding-bottom: 0.58em;">)</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mi class="MJX-tex-caligraphic" mathvariant="script">N</mi></mrow><mo stretchy="false">(</mo><mn>3.5</mn><mo>,</mo><msup><mn>0.5</mn><mn>2</mn></msup><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-62">\mathcal{N}(3.5, 0.5^2)</script></span><span>，並clip範圍於0-5之間。</span><br>
+<code>AVG_EP_LENGTH</code><span>：抽樣自 </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-63-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi class=&quot;MJX-tex-caligraphic&quot; mathvariant=&quot;script&quot;>N</mi></mrow><mo stretchy=&quot;false&quot;>(</mo><mn>25</mn><mo>,</mo><msup><mn>5</mn><mn>2</mn></msup><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-511" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-512" class="mjx-mrow"><span id="MJXc-Node-513" class="mjx-texatom"><span id="MJXc-Node-514" class="mjx-mrow"><span id="MJXc-Node-515" class="mjx-mi"><span class="mjx-char MJXc-TeX-cal-R" style="padding-top: 0.528em; padding-bottom: 0.37em; padding-right: 0.159em;">N</span></span></span></span><span id="MJXc-Node-516" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.475em; padding-bottom: 0.58em;">(</span></span><span id="MJXc-Node-517" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.37em;">25</span></span><span id="MJXc-Node-518" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.155em; padding-bottom: 0.528em;">,</span></span><span id="MJXc-Node-519" class="mjx-msubsup MJXc-space1"><span class="mjx-base"><span id="MJXc-Node-520" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.37em;">5</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-521" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.318em;">2</span></span></span></span><span id="MJXc-Node-522" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.475em; padding-bottom: 0.58em;">)</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mi class="MJX-tex-caligraphic" mathvariant="script">N</mi></mrow><mo stretchy="false">(</mo><mn>25</mn><mo>,</mo><msup><mn>5</mn><mn>2</mn></msup><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-63">\mathcal{N}(25, 5^2)</script></span><span>。</span><br>
+<code>CHARACTER_NUM</code><span>：抽樣自 </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-64-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mi class=&quot;MJX-tex-caligraphic&quot; mathvariant=&quot;script&quot;>N</mi></mrow><mo stretchy=&quot;false&quot;>(</mo><mn>30</mn><mo>,</mo><msup><mn>5</mn><mn>2</mn></msup><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-523" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-524" class="mjx-mrow"><span id="MJXc-Node-525" class="mjx-texatom"><span id="MJXc-Node-526" class="mjx-mrow"><span id="MJXc-Node-527" class="mjx-mi"><span class="mjx-char MJXc-TeX-cal-R" style="padding-top: 0.528em; padding-bottom: 0.37em; padding-right: 0.159em;">N</span></span></span></span><span id="MJXc-Node-528" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.475em; padding-bottom: 0.58em;">(</span></span><span id="MJXc-Node-529" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.37em;">30</span></span><span id="MJXc-Node-530" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.155em; padding-bottom: 0.528em;">,</span></span><span id="MJXc-Node-531" class="mjx-msubsup MJXc-space1"><span class="mjx-base"><span id="MJXc-Node-532" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.37em;">5</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-533" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.318em;">2</span></span></span></span><span id="MJXc-Node-534" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.475em; padding-bottom: 0.58em;">)</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mi class="MJX-tex-caligraphic" mathvariant="script">N</mi></mrow><mo stretchy="false">(</mo><mn>30</mn><mo>,</mo><msup><mn>5</mn><mn>2</mn></msup><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-64">\mathcal{N}(30, 5^2)</script></span><span>，隨後再取floor。</span></li>
+</ol><p><span>註：分類時無法以字串形式輸入，因此會將類別編碼為數字後才放入分類模型內。順序如上所示，第一個元素編號為0，第二個元素為1，以此類推。</span></p><ol start="3">
+<li><span>資料噪音</span></li>
+</ol><h4 id="II-規則（Rules）" data-id="II-規則（Rules）" style=""><a class="anchor hidden-xs" href="#II-規則（Rules）" title="II-規則（Rules）"><span class="octicon octicon-link"></span></a><span>(II) 規則（Rules）</span></h4><p><span>基於幾項事實如</span><br>
+<span>(1) Lisa 配樂的戰鬥番（鬼滅之刃、FateZero）都滿有名。</span><br>
+<span>(2) 在 Sawano Hiroyuki 的神曲加持後，戰鬥番都會變特別好看。</span><br>
+<span>(3) 排球少年、黑子籃球等運動番等都頗負盛名。</span><br>
+<span>定義鉅作（masterpiece）為</span></p><blockquote>
+<p><code>IN_SEIYUU_RANK</code><span> = 1（True） and </span><code>STUDIO_STAFF_NUM</code><span> &gt;= 120，且滿足(a), (b)中至少一個條件：</span><br>
+<span>(a)</span><br>
+<code>AVG_RATING</code><span> &gt; 4.0 AND</span><code>CHARACTER_NUM</code><span> &gt; 35 AND</span><code>SCREENPLAY_WRITER_NUM</code><span> &gt; 3 AND </span><code>SEASONS</code><span> &gt; 2</span><br>
+<span>(b)</span><br>
+<code>THEME_SINGER</code><span> = ‘Lisa’ or ‘Sawano Hiroyuki’ AND</span><br>
+<code>STYLE</code><span> = ‘運動’ OR ‘戰鬥’ AND</span><br>
+<code>AVG_RATING</code><span> &gt; 3.8</span></p>
+</blockquote><p><span>定義小品（refreshing）作品為</span></p><blockquote>
+<p><span>不符合鉅作規定者中，</span><br>
+<code>IN_SEIYUU_RANK</code><span> = True, </span><code>STUDIO_STAFF_NUM</code><span> &gt;= 50，且滿足(a), (b)中至少一個條件：</span><br>
+<span>(a)</span><br>
+<code>AVG_RATING</code><span> &gt; 3.5 AND </span><code>CHARACTER_NUM</code><span> &gt; 20 AND </span><code>SEASONS </code><span>&gt; 1 AND (</span><code>AUTHOR</code><span> = 1 OR 2)</span><br>
+<span>(b)</span><br>
+<code>THEME_SINGER</code><span> 為 ‘Hoshino Gen’, ‘Kenshi Yonezu’, ‘Mukai Taichi’,  ‘Chico with HoneyWorks’ 其中之一 AND</span><br>
+<code>STYLE</code><span> 為 ‘致鬱’, ‘奇幻’, ‘搞笑’, ‘懸疑’, ‘戀愛’ 其中之一 AND</span><br>
+<code>AVG_RATING</code><span> &gt; 3.8 AND</span><br>
+<code>AVG_EP_LENGTH</code><span> &gt; 23</span></p>
+</blockquote><ol start="3">
+<li><span>資料集數據</span><br>
+<span>共產出兩組資料，其中</span><br>
+<code>anime_dataset_10000-0.csv</code><span> 包含10,000筆資料，完全按照規則分類，</span><br>
+<code>anime_dataset_10000-0.05.csv</code><span> 則是另產生一包含10,000筆的資料檔案，並隨機修改(tweak) 5% 的資料類別</span><br>
+<span>（屬性欄位不變，將類別隨機改成規則類別之外的其中一個類別），總共修改500筆。</span></li>
+</ol><table>
+<thead>
+<tr>
+<th><span>Dataset</span></th>
+<th><span>Masterpiece</span></th>
+<th><span>Refreshing</span></th>
+<th><span>Bland</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span>Absolute Rules (0)</span></td>
+<td><span>328</span></td>
+<td><span>446</span></td>
+<td><span>9,226</span></td>
+</tr>
+<tr>
+<td><span>Tweaked (0.05)</span></td>
+<td><span>559</span></td>
+<td><span>652</span></td>
+<td><span>8,789</span></td>
+</tr>
+</tbody>
+</table><h2 id="II-分類模型分析" data-id="II-分類模型分析"><a class="anchor hidden-xs" href="#II-分類模型分析" title="II-分類模型分析"><span class="octicon octicon-link"></span></a><span>II. 分類模型分析</span></h2><h4 id="I-測試集正確率（Testing-Accuracy）" data-id="I-測試集正確率（Testing-Accuracy）"><a class="anchor hidden-xs" href="#I-測試集正確率（Testing-Accuracy）" title="I-測試集正確率（Testing-Accuracy）"><span class="octicon octicon-link"></span></a><span>(I) 測試集正確率（Testing Accuracy）</span></h4><table>
+<thead>
+<tr>
+<th><span>tweak_ratio\model</span></th>
+<th><span>Decision Tree</span></th>
+<th><span>Naive Bayes Gaussian NB</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span>0</span></td>
+<td><span>0.988</span></td>
+<td><span>0.743</span></td>
+</tr>
+<tr>
+<td><span>0.05</span></td>
+<td><span>0.935</span></td>
+<td><span>0.888</span></td>
+</tr>
+</tbody>
+</table><h4 id="II-絕對規則資料集（Absolute-Rule-Dataset）" data-id="II-絕對規則資料集（Absolute-Rule-Dataset）"><a class="anchor hidden-xs" href="#II-絕對規則資料集（Absolute-Rule-Dataset）" title="II-絕對規則資料集（Absolute-Rule-Dataset）"><span class="octicon octicon-link"></span></a><span>(II) 絕對規則資料集（Absolute-Rule Dataset）</span></h4><p><img src="https://i.imgur.com/sXk2CZF.png" alt="" width="1000" loading="lazy"></p><ol>
+<li><span>決策樹（Decision Tree）</span><br>
+<span>設定決策樹超參數</span><code>MIN_SAMEPLES_LEAF</code><span> = 30 與</span><code>MAX_DEPTH</code><span> = 7，最深藍色者為鉅作，較淺者為小品，最淺者為普通，mixed nodes則為白底。</span><br>
+<span>其中241筆的鉅作動漫資料落在</span><br>
+<span>AVG_RATING &gt; 3.8 </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-150-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-864" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-865" class="mjx-mrow"><span id="MJXc-Node-866" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.213em; padding-bottom: 0.37em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-150">\rightarrow</script></span><span> IN_SEIYUU_RANK = True </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-151-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-867" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-868" class="mjx-mrow"><span id="MJXc-Node-869" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.213em; padding-bottom: 0.37em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-151">\rightarrow</script></span><span> THEME_SINGER 為 Sawano 和 Lisa </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-152-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>&amp;#x2192;</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-870" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-871" class="mjx-mrow"><span id="MJXc-Node-872" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.213em; padding-bottom: 0.37em;">→</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">→</mo></math></span></span><script type="math/tex" id="MathJax-Element-152">\rightarrow</script></span><span> STUDIO_STAFF_NUM &gt; 120 的決策樹路徑上。可以看出這部分的動漫資料應該都是符合鉅作底下之條件(b)，因其中的主題曲歌手（Theme Singer）的機率經特地設計，該兩位歌手出現的機率也大幅提升，因此條件(b)發生機率較(a)高。該路徑也抓到了鉅作的必要條件：IN_SEIYUU_RANK = True （第二層） and STUDIO_STAFF_NUM &gt;= 120 （第五層），而第一層的node之屬性為AVG_RATING，從資料設計規則來看也可以得到合理解釋：因從普通作品中要區別出鉅作和小品，AVG_RATING高於3.5是必要條件。</span><br>
+<span>而小品動漫資料在這棵決策樹中則落在兩個nodes上。</span><br>
+<span>'REFRESHING-1’點共78筆資料，其路徑上的幾個attributes （不按照路徑順序）為：</span><br>
+<span>3.5 &lt;= AVG_RATING &lt; 3.8, IN_SEIYUU_RANK = True, #SEASONS &gt; 3，AUTHOR編號0或1, CHARACTER_NUM &gt;= 27。</span><br>
+<span>這和資料規則中小品的條件(a)大致相同，唯#SEASONS和CHARACTER_NUM的要求比規則設計時更為嚴格一些。</span><br>
+<span>‘REFRESHING-2’點則有30筆資料，其路徑上的幾個attributes為</span><br>
+<span>AVG_RATING &gt; 3.8, IN_SEIYUU_RANK = True, STYLE &lt; 4.5 （意即類別屬於’搞笑’、‘戀愛’、‘致鬱’、‘懸疑’、‘奇幻’）, AVG_EP_LENGTH &gt; 22.6 CHARACTER_NUM &lt;= 28.5。這和條件(b)大致相同，唯THEME_SINGER的條件未能夠列入該樹前7層。</span></li>
+</ol><p><img src="https://i.imgur.com/Eyig7z0.png" alt="" loading="lazy"></p><ol start="2">
+<li>
+<p><span>貝氏分類器（Naive Bayes）</span><br>
+<span>Naive Bayes 的前提假設之一為屬性間互相獨立，屬性中如有連續變數則假設其服從高斯分佈（這點和我資料設計的做法相同）。</span><br>
+<span>可以看到因為資料設計規則都是多個屬性要同時符合某項條件才能被劃分為某一類，因此屬性間的關聯性高，故 Naive Bayes 表現較差。從 confusion matrix 可以看出其常常將bland誤判為refreshing。代表 refreshing 類別與 bland 類別的決策邊界對NB來說非常難以fit。</span><br>
+<span>註：confusion matrix 中的類別0, 1, 2分別對應bland, refreshing和masterpiece。</span><br>
+<img src="https://i.imgur.com/t9YYPq8.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p><span>特徵分析（Feature Analysis）</span><br>
+<span>我們使用 permutation importance 來評估哪些特徵對分類成效有顯著影響。一個特徵的permutation importance (score) 定義為「當任意shuffle該特徵時，模型分數衰減的程度」（the decrease in a model score when a single feature is randomly shuffled）。故其值越大代表該特徵越顯著。以下挑出</span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-155-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msup><mi>R</mi><mn>2</mn></msup><mo>&amp;gt;</mo><mn>0</mn></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-883" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-884" class="mjx-mrow"><span id="MJXc-Node-885" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-886" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.475em; padding-bottom: 0.318em;">R</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.513em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-887" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.318em;">2</span></span></span></span><span id="MJXc-Node-888" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.265em; padding-bottom: 0.37em;">&gt;</span></span><span id="MJXc-Node-889" class="mjx-mn MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.37em;">0</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>R</mi><mn>2</mn></msup><mo>&gt;</mo><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-155">R^2 > 0</script></span><span>的特徵並列出其 平均 </span><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-156-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo>&amp;#x00B1;</mo></math>" role="presentation" style="font-size: 119%; position: relative;"><span id="MJXc-Node-890" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-891" class="mjx-mrow"><span id="MJXc-Node-892" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.37em; padding-bottom: 0.318em;">±</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>±</mo></math></span></span><script type="math/tex" id="MathJax-Element-156">\pm</script></span><span> 標準差 的形式。</span><br>
+<span>Decision Tree中以AVG_RATING影響最大，其次是IN_SEIYUU_RANK，STUDIO_STAFF_NUM需要超過某一閾值雖然也是必要的條件，但可能是因為該條件比較容易達成，因此該特徵的 permutation importance 計算起來反而不高。而Naive Bayes 中也是以這兩個特徵最為顯著（雖然順序調換）。</span></p>
+</li>
+</ol><p><img src="https://i.imgur.com/2WUoXmh.png" alt="" width="300" loading="lazy"><br>
+<img src="https://i.imgur.com/E48Jm0r.png" alt="" width="300" loading="lazy"></p><h4 id="III-修改資料集（Tweaked-Dataset）" data-id="III-修改資料集（Tweaked-Dataset）"><a class="anchor hidden-xs" href="#III-修改資料集（Tweaked-Dataset）" title="III-修改資料集（Tweaked-Dataset）"><span class="octicon octicon-link"></span></a><span>(III) 修改資料集（Tweaked Dataset）</span></h4><ol>
+<li><span>決策樹（Decision Tree）</span><br>
+<span>加入了噪音後的資料集對Decision Tree造成4%左右的退步幅度。畢竟絕對規則如果被打破後對Decision Tree來說就會造成混淆，使得某些絕對規則可能不再適用。但因為 </span><code>tweak_ratio</code><span> 設定的不大，該模型的accuracy仍然維持得頗高。 至於樹的形狀則分枝非常嚴重，基本上 permutation importance 為正的特徵都參與了這幾組分枝，使得樹的 leaf nodes 大概只有一半屬於 pure class，純屬於鉅作系列的node在 </span><code>MAX_DEPTH = 7</code><span> 的情況甚至還無法被區分出來。</span></li>
+</ol><p><img src="https://i.imgur.com/QRB2it8.png" alt="" loading="lazy"><br>
+<span>（check </span><code>tree_0.05.png</code><span> for clearer image）</span><br>
+<img src="https://i.imgur.com/FRgatgl.png" alt="" width="300" loading="lazy"></p><ol start="2">
+<li><span>貝氏分類器（Naive Bayes）</span><br>
+<span>神奇的是在混淆後，貝氏分類器的正確率竟然大幅上升至88%，然而只要細看 confusion matrix 就會發現該分類器將所有的資料幾乎都預測為bland（第0類）。故此時光看accuracy這個metric並不準確。改採macro f1可能是較好的衡量方法。</span></li>
+</ol><p><img src="https://i.imgur.com/KoXpZQ2.png" alt="" width="300" loading="lazy"></p><ol start="3">
+<li><span>觀察</span><br>
+<span>從下表可以看出在混淆部分資料後決策樹還能夠維持高達 0.77 的 macro f1（類別f1的平均），而NB則滑落至 0.395。因此使用了人為規則設計後的這份資料顯然比較適合以Decision Tree做預測。</span></li>
+</ol><p><img src="https://i.imgur.com/CBNf9Dh.png" alt="" width="300" loading="lazy"><br>
+<img src="https://i.imgur.com/3tJGkBe.png" alt="" width="300" loading="lazy"></p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc expand"><ul class="nav">
+<li><a href="#2022-Data-Mining-Project-2" title="2022 Data Mining Project 2">2022 Data Mining Project 2</a><ul class="nav">
+<li><a href="#I-資料設計（Data-Design）" title="I. 資料設計（Data Design）">I. 資料設計（Data Design）</a><ul class="nav">
+<li><a href="#I-特徵屬性（FeaturesAttributes）" title="(I) 特徵/屬性（Features/Attributes）">(I) 特徵/屬性（Features/Attributes）</a></li>
+<li><a href="#Discrete-numerical-離散數值型" title="Discrete, numerical 離散數值型">Discrete, numerical 離散數值型</a></li>
+<li><a href="#Discrete-numerical-離散數值型：Boolean-布林變數" title="Discrete, numerical 離散數值型：Boolean 布林變數">Discrete, numerical 離散數值型：Boolean 布林變數</a></li>
+<li><a href="#Discrete-categorical-離散類別型" title="Discrete, categorical 離散類別型">Discrete, categorical 離散類別型</a></li>
+<li><a href="#Continuous-連續型" title="Continuous 連續型">Continuous 連續型</a></li>
+<li><a href="#II-規則（Rules）" title="(II) 規則（Rules）">(II) 規則（Rules）</a></li>
+</ul>
+</li>
+<li><a href="#II-分類模型分析" title="II. 分類模型分析">II. 分類模型分析</a><ul class="nav">
+<li><a href="#I-測試集正確率（Testing-Accuracy）" title="(I) 測試集正確率（Testing Accuracy）">(I) 測試集正確率（Testing Accuracy）</a></li>
+<li><a href="#II-絕對規則資料集（Absolute-Rule-Dataset）" title="(II) 絕對規則資料集（Absolute-Rule Dataset）">(II) 絕對規則資料集（Absolute-Rule Dataset）</a></li>
+<li><a href="#III-修改資料集（Tweaked-Dataset）" title="(III) 修改資料集（Tweaked Dataset）">(III) 修改資料集（Tweaked Dataset）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Collapse all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc expand"><ul class="nav">
+<li><a href="#2022-Data-Mining-Project-2" title="2022 Data Mining Project 2">2022 Data Mining Project 2</a><ul class="nav">
+<li><a href="#I-資料設計（Data-Design）" title="I. 資料設計（Data Design）">I. 資料設計（Data Design）</a><ul class="nav">
+<li><a href="#I-特徵屬性（FeaturesAttributes）" title="(I) 特徵/屬性（Features/Attributes）">(I) 特徵/屬性（Features/Attributes）</a></li>
+<li><a href="#Discrete-numerical-離散數值型" title="Discrete, numerical 離散數值型">Discrete, numerical 離散數值型</a></li>
+<li><a href="#Discrete-numerical-離散數值型：Boolean-布林變數" title="Discrete, numerical 離散數值型：Boolean 布林變數">Discrete, numerical 離散數值型：Boolean 布林變數</a></li>
+<li><a href="#Discrete-categorical-離散類別型" title="Discrete, categorical 離散類別型">Discrete, categorical 離散類別型</a></li>
+<li><a href="#Continuous-連續型" title="Continuous 連續型">Continuous 連續型</a></li>
+<li><a href="#II-規則（Rules）" title="(II) 規則（Rules）">(II) 規則（Rules）</a></li>
+</ul>
+</li>
+<li><a href="#II-分類模型分析" title="II. 分類模型分析">II. 分類模型分析</a><ul class="nav">
+<li><a href="#I-測試集正確率（Testing-Accuracy）" title="(I) 測試集正確率（Testing Accuracy）">(I) 測試集正確率（Testing Accuracy）</a></li>
+<li><a href="#II-絕對規則資料集（Absolute-Rule-Dataset）" title="(II) 絕對規則資料集（Absolute-Rule Dataset）">(II) 絕對規則資料集（Absolute-Rule Dataset）</a></li>
+<li><a href="#III-修改資料集（Tweaked-Dataset）" title="(III) 修改資料集（Tweaked Dataset）">(III) 修改資料集（Tweaked Dataset）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Collapse all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
