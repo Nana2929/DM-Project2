@@ -99,16 +99,16 @@ def is_masterpiece(d: Dict[str, Union[int, float]]):
     - 鉅作：
     IN_SEIYUU_RANK = True and STUDIO_STAFF_NUM >= 120
     且滿足至少以下其中一個條件
-    (1)
+    (a)
     AVG_RATING > 4.0
     CHARACTER_NUM > 35
     SCREENPLAY_WRITER_NUM > 3
     SEASONS > 2
 
-    (2)
+    (b)
     THEME_SINGER = 'Lisa' or 'Sawano Hiroyuki'
     STYLE = '運動' or '戰鬥'
-    AVG_RATING > 3.8 
+    AVG_RATING > 3.8
     """
 
     if d[IN_SEIYUU_RANK] == 0 or d[STUDIO_STAFF_NUM] < 120:
@@ -137,13 +137,13 @@ def is_refreshing(d: Dict[str, Union[int, float]]):
     IN_SEIYUU_RANK = True, STUDIO_STAFF_NUM >= 50
     且滿足至少以下其中一個條件
 
-    (1)
+    (a)
     AVG_RATING > 3.5
     CHARACTER_NUM > 20
     SEASONS > 1
     AUTHOR = 1 or 2  一、二號作家特別喜歡寫清新小品
 
-    (2)
+    (b)
     THEME_SINGER = 'Hoshino Gen', 'Kenshi Yonezu', 'Mukai Taichi',  'Chico with HoneyWorks'
     STYLE = '致鬱', '奇幻', '搞笑', '懸疑', '戀愛'
     AVG_RATING > 3.8

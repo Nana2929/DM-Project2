@@ -10,8 +10,9 @@ import pandas as pd
 from typing import Final, Dict, Union, Tuple
 import matplotlib.pyplot as plt
 import os
+from sklearn.metrics import f1_score
 
-OUTDIR = 'output/'
+OUTDIR = 'output'
 SINGER_MAP: Final[Dict] = {0: 'Lisa',
                            1: 'Sawano Hiroyuki',
                            2: 'Kenshi Yonezu',
@@ -80,17 +81,18 @@ def save_dt(clf, graph, nodes, tratio):
                 node.set_fillcolor(colors[-1])
         except:
             pass  # print(f'invalid node name {node.get_name()}')
-    graph.write_png(f'{OUTDIR}tree_{tratio}.png')
+    graph.write_png(f'{OUTDIR}/tree_{tratio}.png')
 
 
-def save_cfm(clf, tratio, test_X, test_y):
+def save_cfm(clf, tratio, model_name, test_X, test_y):
     cm = confusion_matrix(test_y,
                           clf.predict(test_X),
                           labels=clf.classes_)
     disp = ConfusionMatrixDisplay(confusion_matrix=cm,
                                   display_labels=clf.classes_)
     disp.plot()
-    plt.savefig(f'{OUTDIR}cfm_{tratio}.png')
+    plt.title(f"Confusion Matrix for tratio {tratio} for {model_name}")
+    plt.savefig(f'{OUTDIR}/cfm_{model_name}_{tratio}.png')
 
 
 # Decision Tree
@@ -101,7 +103,9 @@ def dt_classify(tratio=0.05):
     dt_clf = tree.DecisionTreeClassifier(min_samples_leaf=MIN_SAMEPLES_LEAF,
                                          max_depth=MAX_DEPTH)
     dt_clf = dt_clf.fit(train_X, train_y)
-
+    prediction = dt_clf.predict(test_X)
+    macrof1 = f1_score(test_y, prediction, average='macro')
+    print(f'Macro F1: {macrof1:.3f}')
     dot_data = tree.export_graphviz(dt_clf,
                                     feature_names=feature_names,
                                     out_file=None,
@@ -114,7 +118,7 @@ def dt_classify(tratio=0.05):
     print(f'Score: {dt_score:.3f}')
     feature_analysis(dt_clf, test_X, test_y, feature_names)
     save_dt(dt_clf, graph, nodes, tratio)
-    save_cfm(dt_clf, tratio, test_X=test_X, test_y=test_y)
+    save_cfm(dt_clf, tratio, model_name='DT', test_X=test_X, test_y=test_y)
 
 
 # Naive Bayes
@@ -125,8 +129,11 @@ def bayes_classify(tratio):
     bayes_clf = GaussianNB()
     bayes_clf = bayes_clf.fit(train_X, train_y)
     bayes_score = bayes_clf.score(test_X, test_y)
+    bayes_prediction = bayes_clf.predict(test_X)
     print(f'Score: {bayes_score:.3f}')
-    save_cfm(bayes_clf, tratio, test_X=test_X, test_y=test_y)
+    save_cfm(bayes_clf, tratio, model_name='GNB', test_X=test_X, test_y=test_y)
+    macrof1 = f1_score(test_y, bayes_prediction, average='macro')
+    print(f'Macro F1: {macrof1:.3f}')
     feature_analysis(bayes_clf, test_X, test_y, feature_names)
 
 
